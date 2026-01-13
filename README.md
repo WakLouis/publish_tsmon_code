@@ -10,8 +10,8 @@ In three different terminals
 ## 0. Environment Variable
 ```bash
 
-source set_sde.bash           // 当无法build program的时候使用
-bf_kdrv_mod_load $SDE_INSTALL // 当无法使用port-add的时候使用
+source set_sde.bash           
+bf_kdrv_mod_load $SDE_INSTALL 
 ```
 ## 1. compile commands
 ``` bash
@@ -40,20 +40,7 @@ bash
 ucli
 pm
 
-配置端口
 port-add 7/0 100g rs
 port-add 8/0 100g rs
 port-enb -/- 
 ```
-
----
-
-# 解释区
-
-Ingress 和 Egress实际上是共用一系列硬件设备，如12个stage
-
-寄存器只能访问一次的强力解释: 每个stage有独立的寄存器阵列和ALU, 不能相互访问.
-
-查看表分配情况路径:
-/root/onl-bf-sde/build/p4-build/tofino/Program Name/Program Name/tofino/pipe/logs
-
